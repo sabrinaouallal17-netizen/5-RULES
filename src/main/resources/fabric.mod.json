@@ -1,0 +1,36 @@
+{
+	"schemaVersion": 1,
+	"id": "fiverules",
+	"version": "${version}",
+	"name": "5 RULES",
+	"description": "A troll mod with 5 rules. Break one and pay the price.",
+	"authors": [
+		"sabrinaouallal17-netizen"
+	],
+	"contact": {
+		"sources": "https://github.com/sabrinaouallal17-netizen/5-RULES"
+	},
+	"license": "All-Rights-Reserved",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.fiverules.FiveRules"
+		],
+		"client": [
+			"com.fiverules.client.FiveRulesClient"
+		]
+	},
+	"mixins": [
+		"fiverules.mixins.json",
+		{
+			"config": "fiverules.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.0",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
