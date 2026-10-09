@@ -29,4 +29,11 @@ class SunMathTest {
 		assertFalse(SunMath.isLookingAtSun(0, -1, 0, 0.5F));
 		assertTrue(SunMath.isSunUp(0.1F));
 	}
+
+	@Test
+	void moonIsOppositeTheSun() {
+		assertTrue(SunMath.isLookingAtMoon(0, 1, 0, 0.5F));
+		assertFalse(SunMath.isLookingAtMoon(0, 1, 0, 0.0F));
+		assertFalse(SunMath.isLookingAtMoon(0, -1, 0, 0.5F));
+	}
 }

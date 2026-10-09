@@ -25,4 +25,23 @@ class DeadlinesTest {
 		assertFalse(deadlines.contains("pig"));
 		assertTrue(deadlines.popExpired(50).isEmpty());
 	}
+
+	@Test
+	void keysListsWaitingEntries() {
+		Deadlines<String, String> deadlines = new Deadlines<>();
+		deadlines.schedule("door", "alice", 10);
+		assertEquals(List.of("door"), deadlines.keys());
+		deadlines.cancel("door");
+		assertTrue(deadlines.keys().isEmpty());
+	}
+
+	@Test
+	void expiredEntriesKeepTheirKeys() {
+		Deadlines<String, String> deadlines = new Deadlines<>();
+		deadlines.schedule("door", "alice", 5);
+		var expired = deadlines.popExpiredEntries(5);
+		assertEquals(1, expired.size());
+		assertEquals("door", expired.get(0).getKey());
+		assertEquals("alice", expired.get(0).getValue());
+	}
 }

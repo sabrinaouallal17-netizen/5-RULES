@@ -1,6 +1,7 @@
 package com.fiverules.client;
 
 import com.fiverules.network.CheaterPayload;
+import com.fiverules.network.ReadBookPayload;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
@@ -19,6 +20,12 @@ public class FiveRulesClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		KeyBindingHelper.registerKeyBinding(RULES_BOOK_KEY);
+
+		ClientPlayNetworking.registerGlobalReceiver(ReadBookPayload.ID, (payload, context) -> {
+			if (!(context.client().currentScreen instanceof ForcedBookScreen)) {
+				context.client().setScreen(new ForcedBookScreen(RulesBook.pages()));
+			}
+		});
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			while (RULES_BOOK_KEY.wasPressed()) {

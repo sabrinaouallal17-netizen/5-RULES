@@ -32,7 +32,19 @@ public final class RulesBook {
 				rule("Rule 9", "Don't stand still",
 						"Stay still for 60 seconds and an Angry Chicken comes to peck you.\n\nKeep moving!"),
 				rule("Rule 10", "Don't lie to animals",
-						"An animal said Yes? Then kill it within a minute.\n\nOtherwise it feels lied to, follows you and hits you."));
+						"An animal said Yes? Then kill it within a minute.\n\nOtherwise it feels lied to, follows you and hits you."),
+				rule("Rule 11", "Close the door",
+						"Close the door behind you.\n\nLeave a door open for 30 seconds and something comes in. Something green."),
+				rule("Rule 12", "Stay hydrated",
+						"Drink a water bottle at least every 20 minutes.\n\nOtherwise you get slow until you drink."),
+				rule("Rule 13", "No armor in bed",
+						"Don't sleep in armor.\n\nWho does that? One piece of your armor breaks while you sleep."),
+				rule("Rule 14", "Don't look at the moon",
+						"Staring at the moon for 3 seconds makes something come down from the sky.\n\nIt has wings."),
+				rule("Rule 15", "Read every book",
+						"Pick up a book and you have to read it.\n\nAll of it. Until the last page. Like you're doing right now."),
+				rule("Rule 16", "Feed your pets",
+						"Feed your dogs, cats and parrots.\n\nForget them for 20 minutes and they run away."));
 	}
 
 	private static Text title() {

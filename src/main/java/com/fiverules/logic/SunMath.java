@@ -1,6 +1,6 @@
 package com.fiverules.logic;
 
-/** Rule 8: works out whether a player is looking at the sun. */
+/** Rules 8 and 14: works out whether a player is looking at the sun or the moon. */
 public final class SunMath {
 	/** Cosine of the largest angle (about 10 degrees) between the look direction and the sun that counts as staring. */
 	public static final double STARE_COS = Math.cos(Math.toRadians(10));
@@ -27,5 +27,14 @@ public final class SunMath {
 			return false;
 		}
 		return lookX * sun[0] + lookY * sun[1] + lookZ * sun[2] >= STARE_COS;
+	}
+
+	/** The moon is always opposite the sun. */
+	public static boolean isLookingAtMoon(double lookX, double lookY, double lookZ, float skyAngle) {
+		double[] sun = sunDirection(skyAngle);
+		if (sun[1] >= 0.0) {
+			return false;
+		}
+		return -(lookX * sun[0] + lookY * sun[1] + lookZ * sun[2]) >= STARE_COS;
 	}
 }

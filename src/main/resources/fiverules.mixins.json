@@ -3,7 +3,9 @@
 	"package": "com.fiverules.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"PlayerEntityMixin"
+		"ItemEntityMixin",
+		"PlayerEntityMixin",
+		"PotionItemMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

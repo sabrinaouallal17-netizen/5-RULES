@@ -1,11 +1,17 @@
 package com.fiverules;
 
 import com.fiverules.network.CheaterPayload;
+import com.fiverules.network.ReadBookPayload;
 import com.fiverules.rules.AnimalRule;
+import com.fiverules.rules.ArmorSleepRule;
 import com.fiverules.rules.CheaterRule;
 import com.fiverules.rules.DigDownRule;
+import com.fiverules.rules.DoorRule;
 import com.fiverules.rules.GoodNightRule;
+import com.fiverules.rules.HydrationRule;
+import com.fiverules.rules.MoonRule;
 import com.fiverules.rules.NatureRule;
+import com.fiverules.rules.PetRule;
 import com.fiverules.rules.StandStillRule;
 import com.fiverules.rules.SunRule;
 import com.fiverules.rules.ToolMisuseRule;
@@ -24,6 +30,7 @@ public class FiveRules implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		PayloadTypeRegistry.playC2S().register(CheaterPayload.ID, CheaterPayload.CODEC);
+		PayloadTypeRegistry.playS2C().register(ReadBookPayload.ID, ReadBookPayload.CODEC);
 
 		ToolMisuseRule.register();
 		AnimalRule.register();
@@ -33,6 +40,11 @@ public class FiveRules implements ModInitializer {
 		DigDownRule.register();
 		SunRule.register();
 		StandStillRule.register();
+		DoorRule.register();
+		HydrationRule.register();
+		ArmorSleepRule.register();
+		MoonRule.register();
+		PetRule.register();
 
 		ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
 			var player = handler.getPlayer();
@@ -47,6 +59,12 @@ public class FiveRules implements ModInitializer {
 			player.sendMessage(Text.literal("8. Don't stare at the sun.").formatted(Formatting.YELLOW));
 			player.sendMessage(Text.literal("9. Don't stand still.").formatted(Formatting.YELLOW));
 			player.sendMessage(Text.literal("10. Don't lie to animals: if one says yes, keep your word.").formatted(Formatting.YELLOW));
+			player.sendMessage(Text.literal("11. Close the door behind you.").formatted(Formatting.YELLOW));
+			player.sendMessage(Text.literal("12. Stay hydrated: drink a water bottle every 20 minutes.").formatted(Formatting.YELLOW));
+			player.sendMessage(Text.literal("13. Don't sleep in armor.").formatted(Formatting.YELLOW));
+			player.sendMessage(Text.literal("14. Don't look at the moon.").formatted(Formatting.YELLOW));
+			player.sendMessage(Text.literal("15. Read every book you pick up.").formatted(Formatting.YELLOW));
+			player.sendMessage(Text.literal("16. Feed your pets.").formatted(Formatting.YELLOW));
 			player.sendMessage(Text.literal("Press ").append(Text.keybind("key.fiverules.rules_book"))
 					.append(" to read the rules book.").formatted(Formatting.GRAY, Formatting.ITALIC));
 		});
