@@ -17,6 +17,15 @@ A Fabric troll mod for **Minecraft 1.21.1**. Break a rule and pay the price.
    A tree counts as soon as you break any of its logs, and only once. Logs you placed yourself don't count.
 5. **Do not cheat.** The F3 screen only shows "Cheater" (it fades out after 3 seconds), and opening it
    eats 2 to 8 points of your food bar (it never drops to zero).
+6. **Say good night.** Write "good night" in the chat (at most 5 minutes) before going to bed,
+   or you wake up surrounded by 3 zombies.
+7. **Don't dig straight down.** Breaking the block under your feet has 1 chance in 3 to open
+   a 10-block hole under you.
+8. **Don't stare at the sun.** Looking at the sun for 3 seconds blinds you for 10 seconds.
+9. **Don't stand still.** Standing still for 60 seconds summons an Angry Chicken that pecks you
+   (half a heart per second) for 15 seconds.
+10. **Don't lie to animals.** If an animal said Yes and you don't kill it within a minute, it feels lied to:
+    it follows you and hits you until you kill it or get more than 48 blocks away.
 
 Press **B** (configurable in Controls) to open a book with all the rules.
 

@@ -22,12 +22,22 @@ public final class RulesBook {
 				rule("Rule 4", "Nature's beauty",
 						"Do not fell 5 trees in a row.\n\nNature takes back everything in your inventory.\n\nAfter that, nature rests for 10 minutes."),
 				rule("Rule 5", "No cheating",
-						"No F3!\n\nCheaters see nothing but the truth, and lose some of their food."));
+						"No F3!\n\nCheaters see nothing but the truth, and lose some of their food."),
+				rule("Rule 6", "Say good night",
+						"Write \"good night\" in the chat before going to bed.\n\nSleep without saying it and you wake up surrounded by zombies."),
+				rule("Rule 7", "Don't dig down",
+						"Never dig straight down.\n\nBreak the block under your feet and the ground may open into a 10-block hole."),
+				rule("Rule 8", "Don't stare at the sun",
+						"Looking at the sun for 3 seconds makes you blind for 10 seconds.\n\nYour mom warned you."),
+				rule("Rule 9", "Don't stand still",
+						"Stay still for 60 seconds and an Angry Chicken comes to peck you.\n\nKeep moving!"),
+				rule("Rule 10", "Don't lie to animals",
+						"An animal said Yes? Then kill it within a minute.\n\nOtherwise it feels lied to, follows you and hits you."));
 	}
 
 	private static Text title() {
 		return Text.empty()
-				.append(Text.literal("\n\n   THE 5 RULES\n\n").formatted(Formatting.DARK_RED, Formatting.BOLD))
+				.append(Text.literal("\n\n     THE RULES\n\n").formatted(Formatting.DARK_RED, Formatting.BOLD))
 				.append(Text.literal("Break one and pay the price.\n\nGood luck.").formatted(Formatting.BLACK));
 	}
 

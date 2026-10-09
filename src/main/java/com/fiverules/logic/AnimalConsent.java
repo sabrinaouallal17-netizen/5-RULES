@@ -16,6 +16,10 @@ public final class AnimalConsent {
 		this.coinFlip = coinFlip;
 	}
 
+	public boolean hasAnswered(UUID animal) {
+		return answers.containsKey(animal);
+	}
+
 	/** Asks the animal, returning its (possibly remembered) answer. */
 	public boolean ask(UUID animal) {
 		return answers.computeIfAbsent(animal, id -> coinFlip.getAsBoolean());
