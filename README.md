@@ -10,12 +10,15 @@ A Fabric troll mod for **Minecraft 1.21.1**. Break a rule and pay the price.
 2. **Ask animals before killing them.** Sneak + right-click an animal with an empty hand to ask.
    It answers Yes or No (50/50) and remembers its answer. Kill it after a No, or without asking,
    and lightning strikes you dead.
-3. **Do not waste food.** Eating while your food bar is at half or more makes an anvil fall from the sky on you.
+3. **Do not waste food.** Eating with an almost full food bar (16/20, 8 drumsticks or more) makes an anvil
+   fall from the sky on you (up to 5 hearts of damage).
 4. **Do not break nature's beauty.** Felling 5 trees in a row (less than 2 minutes between each)
    empties your whole inventory. Then the rule rests for 10 minutes.
-   A tree counts when you break its bottom log (the one on dirt/grass).
-5. **Do not cheat.** The F3 screen only shows "Cheater", and opening it eats 2 to 8 points
-   of your food bar (it never drops to zero).
+   A tree counts as soon as you break any of its logs, and only once. Logs you placed yourself don't count.
+5. **Do not cheat.** The F3 screen only shows "Cheater" (it fades out after 3 seconds), and opening it
+   eats 2 to 8 points of your food bar (it never drops to zero).
+
+Press **B** (configurable in Controls) to open a book with all the rules.
 
 Creative and spectator players are not affected.
 

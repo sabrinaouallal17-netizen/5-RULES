@@ -7,14 +7,15 @@ import org.junit.jupiter.api.Test;
 
 class FoodRuleTest {
 	@Test
-	void underHalfIsAllowed() {
+	void hungryEnoughIsAllowed() {
 		assertFalse(FoodRule.isWasting(0));
-		assertFalse(FoodRule.isWasting(9));
+		assertFalse(FoodRule.isWasting(10));
+		assertFalse(FoodRule.isWasting(15));
 	}
 
 	@Test
-	void halfOrMoreIsWasting() {
-		assertTrue(FoodRule.isWasting(10));
+	void almostFullIsWasting() {
+		assertTrue(FoodRule.isWasting(16));
 		assertTrue(FoodRule.isWasting(20));
 	}
 }
