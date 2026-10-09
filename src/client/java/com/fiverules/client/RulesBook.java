@@ -42,7 +42,7 @@ public final class RulesBook {
 				rule("Rule 14", "Don't look at the moon",
 						"Staring at the moon for 3 seconds makes something come down from the sky.\n\nIt has wings."),
 				rule("Rule 15", "Read every book",
-						"Pick up a book and you have to read it.\n\nAll of it. Until the last page. Like you're doing right now."),
+						"Pick up a book and you have to read it.\n\nAll of it. Until the last page."),
 				rule("Rule 16", "Feed your pets",
 						"Feed your dogs, cats and parrots.\n\nForget them for 20 minutes and they run away."));
 	}

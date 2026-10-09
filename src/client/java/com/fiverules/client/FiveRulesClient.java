@@ -23,7 +23,7 @@ public class FiveRulesClient implements ClientModInitializer {
 
 		ClientPlayNetworking.registerGlobalReceiver(ReadBookPayload.ID, (payload, context) -> {
 			if (!(context.client().currentScreen instanceof ForcedBookScreen)) {
-				context.client().setScreen(new ForcedBookScreen(RulesBook.pages()));
+				context.client().setScreen(new ForcedBookScreen(payload.pages()));
 			}
 		});
 

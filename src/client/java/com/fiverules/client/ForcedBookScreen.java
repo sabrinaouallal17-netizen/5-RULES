@@ -22,8 +22,8 @@ public class ForcedBookScreen extends Screen {
 	private ButtonWidget doneButton;
 
 	public ForcedBookScreen(List<Text> pages) {
-		super(Text.literal("READ THE RULES"));
-		this.pages = pages;
+		super(Text.literal("Read the book"));
+		this.pages = pages.isEmpty() ? List.of(Text.empty()) : pages;
 	}
 
 	@Override

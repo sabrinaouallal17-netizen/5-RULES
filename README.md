@@ -30,7 +30,7 @@ A Fabric troll mod for **Minecraft 1.21.1**. Break a rule and pay the price.
 12. **Stay hydrated.** 20 minutes of play without drinking a water bottle makes you slow until you drink one.
 13. **Don't sleep in armor.** Sleeping in armor breaks one random armor piece when you wake up.
 14. **Don't look at the moon.** Staring at the moon for 3 seconds summons a phantom next to you.
-15. **Read every book.** Picking up a book opens the rules book, and you can't close it before the last page.
+15. **Read every book.** Picking up a book opens that book, and you can't close it before the last page.
 16. **Feed your pets.** Tamed wolves, cats and parrots not fed for 20 minutes (while you play) run away.
 
 Press **B** (configurable in Controls) to open a book with all the rules.

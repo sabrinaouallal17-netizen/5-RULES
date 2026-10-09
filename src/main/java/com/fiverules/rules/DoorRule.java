@@ -1,6 +1,8 @@
 package com.fiverules.rules;
 
 import com.fiverules.logic.Deadlines;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
@@ -65,8 +67,18 @@ public final class DoorRule {
 				OPEN_DOORS.cancel(key);
 			}
 		}
+		Set<DoorKey> handled = new HashSet<>();
 		for (var entry : OPEN_DOORS.popExpiredEntries(server.getTicks())) {
 			DoorKey key = entry.getKey();
+			if (!handled.add(key)) {
+				continue;
+			}
+			// A double door is one door: forget its other half so it doesn't spawn a second creeper.
+			for (Direction side : Direction.Type.HORIZONTAL) {
+				DoorKey neighbor = new DoorKey(key.world(), key.pos().offset(side));
+				OPEN_DOORS.cancel(neighbor);
+				handled.add(neighbor);
+			}
 			ServerPlayerEntity player = server.getPlayerManager().getPlayer(entry.getValue());
 			if (player == null || Punish.isExempt(player)) {
 				continue;
